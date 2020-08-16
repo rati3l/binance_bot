@@ -5,8 +5,8 @@ from .models import Base, Next_Operation, Score
 
 
 class DB:
-    def __init__(self, database_path):
-        self.engine = create_engine(f'sqlite:///{database_path}', echo=True)
+    def __init__(self, database_path, echo=False):
+        self.engine = create_engine(f'sqlite:///{database_path}', echo=echo)
         self.Session = scoped_session(sessionmaker(bind=self.engine))
         Base.metadata.create_all(self.engine)
     
