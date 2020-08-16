@@ -4,5 +4,7 @@ __pycache__/
 
 venv/
 venv
+.vscode
 
-
+# local sqlite database
+db/test.db
